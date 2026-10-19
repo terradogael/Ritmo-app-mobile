@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 2,
+  "revision": 0,
+  "updatedAt": null,
+  "startedOn": "2026-10-16",
+  "today": "2026-10-17",
+  "habits": [
+    {
+      "id": "h-mvczhs8z-xxao84b5t3q",
+      "createdOn": "2026-10-16",
+      "archived": false,
+      "deletedAt": null,
+      "versions": [
+        {
+          "from": "2026-10-16",
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "active": true
+        }
+      ],
+      "name": "Lectura V4.4",
+      "icon": "book",
+      "emoji": "📚",
+      "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "history": {
+    "2026-10-16": {
+      "date": "2026-10-16",
+      "items": {
+        "h-mvczhs8z-xxao84b5t3q": {
+          "name": "Lectura V4.4",
+          "icon": "book",
+          "emoji": "📚",
+          "scheduled": true,
+          "done": true
+        }
+      }
+    },
+    "2026-10-17": {
+      "date": "2026-10-17",
+      "items": {
+        "h-mvczhs8z-xxao84b5t3q": {
+          "name": "Lectura V4.4",
+          "icon": "book",
+          "emoji": "📚",
+          "scheduled": true,
+          "done": false
+        }
+      }
+    }
+  },
+  "tasks": [
+    {
+      "id": "t-mvczhs90-x3jo55k46yb",
+      "done": false,
+      "completedAt": null,
+      "createdAt": "2026-10-17T22:44:32.964Z",
+      "name": "Tarea V4.4",
+      "subject": "Materia",
+      "due": "2026-11-01",
+      "minutes": 45,
+      "description": "Dato que debe conservarse",
+      "updatedAt": "2026-10-17T22:44:32.964Z"
+    }
+  ],
+  "exams": [
+    {
+      "id": "e-mvczhs90-ullc6khx1b",
+      "name": "Materia V4.4",
+      "title": "Parcial",
+      "type": "Parcial",
+      "due": "2026-11-04",
+      "time": "08:30",
+      "topics": [
+        "Tema A",
+        "Tema B"
+      ],
+      "topicIds": [
+        "topic-mvczhs90-tn9btg5ul1",
+        "topic-mvczhs90-0yywq5znf0v"
+      ],
+      "preparation": [
+        "repasado",
+        "pendiente"
+      ]
+    }
+  ],
+  "sessions": [],
+  "timer": {
+    "phase": "focus",
+    "status": "paused",
+    "remaining": 2400,
+    "deadline": 0,
+    "runId": "session-mvczhs90-6zkspu0xu6r",
+    "activity": {
+      "kind": "free",
+      "label": "Sesión libre"
+    },
+    "pending": null
+  },
+  "preferences": {
+    "motion": true,
+    "sounds": false,
+    "notifications": false
+  },
+  "ui": {
+    "last": {
+      "day": "inicio",
+      "night": "facultad"
+    },
+    "habitFilter": "activos",
+    "taskFilter": "todas",
+    "examFilter": "proximos",
+    "taskSort": "cercano",
+    "period": "mes"
+  }
+}

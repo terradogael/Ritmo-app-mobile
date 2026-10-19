@@ -1,0 +1,50 @@
+/* V4.4: estados funcionales; las reglas visuales V4.3 permanecen intactas. */
+#storage-notice { position:relative;z-index:70;max-width:470px;margin:auto;padding:12px 18px;background:#fff1cf;color:#563c23;font-size:12px;line-height:1.5; }
+#storage-notice[hidden]{display:none;}
+#storage-notice button{border:1px solid currentColor;border-radius:8px;background:transparent;padding:7px;margin-left:8px;min-height:36px;}
+.day-records{list-style:none;padding:0;margin:16px 0;}
+.day-records .habit{margin-bottom:10px;}
+.day-browse{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.day-browse input{min-width:0;max-width:190px;}
+.habit-icon>span{font-size:22px;line-height:1;}
+.demo-banner{font-weight:600;}
+.field input,.field select,.field textarea{max-width:100%;box-sizing:border-box;}
+.settings-section>.secondary-button{margin-block:6px;}
+
+/* Los porcentajes reales también pueden alcanzar tres cifras. */
+.consistency-rate { white-space: nowrap; }
+.task-description { white-space: pre-wrap; overflow-wrap: anywhere; }
+
+/* Paneles funcionales; identidad visual V4.3 conservada. */
+.sync-values{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;font-size:12px;max-height:220px;overflow:auto;}
+.sync-row{border-top:1px solid #a48d7033;padding-block:8px;overflow-wrap:anywhere;}
+[data-google-form] .setting-row{gap:12px;}
+[data-google-form] .setting-row span{min-width:0;}
+
+/* V4.5.1: continuidad de color en barras del sistema (sujeto al soporte Android). */
+:root,html,body{background:#fcf3e5}html:has(body.faculty-page),body.faculty-page{background:#080f1c}
+body{transition:background-color .2s ease}
+.google-connect-grid{display:grid;gap:12px;margin:12px 0 18px}
+.google-connect-card{display:grid;grid-template-columns:42px minmax(0,1fr) auto;align-items:center;gap:12px;padding:14px 12px;border:1px solid var(--panel-line);border-radius:18px;background:var(--soft)}
+.google-connect-card .google-mark{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:#fff;color:#4285f4;font-weight:800;font-size:23px}
+.google-connect-card .google-mark.calendar{color:#1a73e8}
+.google-connect-card strong{display:block;font-size:14px}.google-connect-card small{display:block;font-size:11px;color:var(--color-muted);margin-top:3px}
+.google-connect-card button{min-height:40px;padding:8px 12px;white-space:nowrap}.google-connect-card button:disabled{opacity:.55}
+.google-simple-status{padding:12px 14px;border-radius:13px;background:var(--soft);font-size:12px;line-height:1.5}
+.google-simple-hint{font-size:12px;line-height:1.5;color:var(--color-muted)}
+.google-simple-destinations .field{margin-bottom:12px}
+@media(max-width:350px){.google-connect-card{grid-template-columns:34px minmax(0,1fr)}.google-connect-card button{grid-column:2;justify-self:start}}
+
+/* 4.5.2: safe-area inferior ocupa el mismo color que el dock, sin franja de papel. */
+:root { color-scheme: light; }
+html:has(body.faculty-page) { color-scheme: dark; }
+body:not(.faculty-page) { background-color: #fcf3e5; }
+body.faculty-page { background-color: #080f1c; }
+@supports(padding: env(safe-area-inset-bottom)) {
+  .dock { padding-bottom: max(9px, env(safe-area-inset-bottom)); }
+}
+/* V4.6: sólo controles funcionales y datos desconocidos. */
+.record-unknown{display:block;font-size:10px;opacity:.65;font-weight:400;}
+.google-simple-status,.sync-values,.exam-date{overflow-wrap:anywhere;}
+#panel fieldset .setting-row{gap:12px;}
+#panel fieldset .setting-row span{min-width:0;overflow-wrap:anywhere;}

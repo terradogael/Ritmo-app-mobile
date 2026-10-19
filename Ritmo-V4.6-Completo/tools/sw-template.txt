@@ -1,0 +1,44 @@
+/* Generado con tools/build-sw.py. Caché exclusivamente de recursos públicos locales. */
+'use strict';
+const ASSETS=__ASSETS__;
+const PREFIX='ritmo-static-'+encodeURIComponent(new URL(self.registration.scope).pathname)+'-';
+const CACHE=PREFIX+'__BUILD__';
+const urlFor=path=>new URL(path,self.registration.scope).href;
+async function verified(path){
+  const response=await fetch(new Request(urlFor(path),{cache:'reload',credentials:'omit'}));
+  if(!response.ok||response.type==='opaque')throw Error('Recurso no disponible');
+  const digest=await crypto.subtle.digest('SHA-256',await response.clone().arrayBuffer());
+  const hash=Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join('');
+  if(hash!==ASSETS[path])throw Error('Versión incompleta o archivos modificados: regenerá sw.js');
+  return response;
+}
+self.addEventListener('install',event=>event.waitUntil((async()=>{
+  const cache=await caches.open(CACHE);
+  try{const results=await Promise.allSettled(Object.keys(ASSETS).map(async path=>{await cache.put(urlFor(path),await verified(path));}));if(results.some(r=>r.status==='rejected'))throw Error('Descarga incompleta');}
+  catch(error){await caches.delete(CACHE);throw error;}
+})()));
+self.addEventListener('activate',event=>event.waitUntil((async()=>{
+  for(const key of await caches.keys())if(key.startsWith(PREFIX)&&key!==CACHE)await caches.delete(key);
+  await self.clients.claim();
+})()));
+self.addEventListener('message',event=>{
+  if(event.data?.type!=='ACTIVATE_UPDATE')return;
+  event.waitUntil((async()=>{
+    const windows=(await self.clients.matchAll({type:'window',includeUncontrolled:true})).filter(c=>c.url.startsWith(self.registration.scope));
+    if(windows.length>1){event.source?.postMessage({type:'UPDATE_BLOCKED'});return;}
+    await self.skipWaiting();
+  })());
+});
+self.addEventListener('fetch',event=>{
+  const request=event.request,url=new URL(request.url),scope=new URL(self.registration.scope);
+  if(request.method!=='GET'||request.headers.has('Authorization')||url.origin!==scope.origin||!url.pathname.startsWith(scope.pathname))return;
+  let path=url.pathname.slice(scope.pathname.length);
+  if(path===''&&request.mode==='navigate')path='index.html';
+  if(!Object.hasOwn(ASSETS,path)||url.search)return;
+  event.respondWith((async()=>{
+    const cache=await caches.open(CACHE),stored=await cache.match(urlFor(path));
+    if(stored)return stored;
+    try{const response=await verified(path);await cache.put(urlFor(path),response.clone());return response;}
+    catch{return new Response('Ritmo: recurso no disponible. Volvé a conectarte y buscá actualizaciones.',{status:503,headers:{'Content-Type':'text/plain; charset=utf-8'}});}
+  })());
+});

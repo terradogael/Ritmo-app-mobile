@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 3,
+  "revision": 0,
+  "updatedAt": null,
+  "startedOn": "2026-10-12",
+  "today": "2026-10-14",
+  "habits": [
+    {
+      "id": "h-mvf59xbe-e0bwoyssn7a",
+      "createdOn": "2026-10-12",
+      "archived": false,
+      "deletedAt": null,
+      "versions": [
+        {
+          "from": "2026-10-12",
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "active": true
+        }
+      ],
+      "name": "Leer",
+      "icon": "book",
+      "emoji": "",
+      "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "googleTask": {
+        "account": "a",
+        "containerId": "d",
+        "remoteId": "h1",
+        "base": {
+          "name": "Leer",
+          "done": true
+        },
+        "etag": "1"
+      }
+    }
+  ],
+  "history": {
+    "2026-10-12": {
+      "date": "2026-10-12",
+      "items": {
+        "h-mvf59xbe-e0bwoyssn7a": {
+          "name": "Leer",
+          "icon": "book",
+          "emoji": "",
+          "scheduled": true,
+          "done": true
+        }
+      }
+    },
+    "2026-10-13": {
+      "date": "2026-10-13",
+      "items": {
+        "h-mvf59xbe-e0bwoyssn7a": {
+          "name": "Leer",
+          "icon": "book",
+          "emoji": "",
+          "scheduled": true,
+          "done": false
+        }
+      }
+    },
+    "2026-10-14": {
+      "date": "2026-10-14",
+      "items": {
+        "h-mvf59xbe-e0bwoyssn7a": {
+          "name": "Leer",
+          "icon": "book",
+          "emoji": "",
+          "scheduled": true,
+          "done": false
+        }
+      }
+    }
+  },
+  "tasks": [
+    {
+      "id": "t-mvf59xbg-n8v3veemi4c",
+      "done": false,
+      "completedAt": null,
+      "createdAt": "2026-10-19T11:01:56.332Z",
+      "name": "Leer",
+      "subject": "",
+      "due": null,
+      "minutes": null,
+      "description": "Importada desde Diario",
+      "updatedAt": "2026-10-19T11:01:56.332Z"
+    },
+    {
+      "id": "t-mvf59xbg-minpn5mifur",
+      "done": false,
+      "completedAt": null,
+      "createdAt": "2026-10-19T11:01:56.332Z",
+      "name": "Leer",
+      "subject": "",
+      "due": null,
+      "minutes": null,
+      "description": "TP auténtico",
+      "updatedAt": "2026-10-19T11:01:56.332Z"
+    }
+  ],
+  "exams": [
+    {
+      "id": "e-mvf59xbv-ot36lu40f2t",
+      "name": "persona@example.test",
+      "title": "Parcial progra 1",
+      "type": "Parcial",
+      "due": "2026-11-10",
+      "time": "09:00",
+      "topics": [
+        "Vectores"
+      ],
+      "topicIds": [
+        "topic-mvf59xbv-tu0uj7mdqkh"
+      ],
+      "preparation": [
+        "pendiente"
+      ],
+      "googleEvent": {
+        "account": "a",
+        "containerId": "cal",
+        "remoteId": "e1",
+        "base": {
+          "title": "Parcial progra 1",
+          "name": "persona@example.test",
+          "due": "2026-11-10",
+          "time": "09:00"
+        },
+        "allDay": true
+      }
+    }
+  ],
+  "sessions": [],
+  "timer": {
+    "phase": "focus",
+    "status": "idle",
+    "remaining": 2700,
+    "deadline": 0,
+    "runId": null,
+    "activity": {
+      "kind": "free",
+      "label": "Sesión libre"
+    },
+    "pending": null
+  },
+  "sync": {
+    "config": {
+      "clientId": "",
+      "taskListId": "",
+      "calendarId": "",
+      "timeZone": "America/Argentina/Buenos_Aires",
+      "accountId": ""
+    },
+    "links": [
+      {
+        "id": "link-mvf59xbg-2qhlkxb1qji",
+        "marker": "link-mvf59xbg-2qhlkxb1qji",
+        "service": "tasks",
+        "localKind": "task",
+        "localId": "t-mvf59xbg-n8v3veemi4c",
+        "containerId": "d",
+        "accountId": "a",
+        "remoteId": "d1",
+        "phase": "linked",
+        "base": null,
+        "etag": null,
+        "timeZone": "America/Argentina/Buenos_Aires",
+        "duration": 60,
+        "lastLocal": {
+          "id": "t-mvf59xbg-n8v3veemi4c",
+          "done": false,
+          "completedAt": null,
+          "createdAt": "2026-10-19T11:01:56.332Z",
+          "name": "Leer",
+          "subject": "",
+          "due": null,
+          "minutes": null,
+          "description": "Importada desde Diario",
+          "updatedAt": "2026-10-19T11:01:56.332Z"
+        }
+      },
+      {
+        "id": "link-mvf59xbv-em77xf901g9",
+        "marker": "link-mvf59xbv-em77xf901g9",
+        "service": "tasks",
+        "localKind": "task",
+        "localId": "t-mvf59xbg-minpn5mifur",
+        "containerId": "f",
+        "accountId": "a",
+        "remoteId": "f1",
+        "phase": "linked",
+        "base": null,
+        "etag": null,
+        "timeZone": "America/Argentina/Buenos_Aires",
+        "duration": 60,
+        "lastLocal": {
+          "id": "t-mvf59xbg-minpn5mifur",
+          "done": false,
+          "completedAt": null,
+          "createdAt": "2026-10-19T11:01:56.332Z",
+          "name": "Leer",
+          "subject": "",
+          "due": null,
+          "minutes": null,
+          "description": "TP auténtico",
+          "updatedAt": "2026-10-19T11:01:56.332Z"
+        }
+      }
+    ],
+    "conflicts": [],
+    "events": [],
+    "lastSync": null
+  },
+  "preferences": {
+    "motion": true,
+    "sounds": false,
+    "notifications": false
+  },
+  "ui": {
+    "last": {
+      "day": "inicio",
+      "night": "facultad"
+    },
+    "habitFilter": "activos",
+    "taskFilter": "todas",
+    "examFilter": "proximos",
+    "taskSort": "cercano",
+    "period": "mes"
+  }
+}

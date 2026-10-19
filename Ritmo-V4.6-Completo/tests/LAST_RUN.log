@@ -1,0 +1,113 @@
+
+PRUEBA: static
+PASS sintaxis, rutas, 25 hashes SW, iconos, manifest y 10 archivos visuales/config idénticos a V4.5.2
+
+PRUEBA: core
+OK 1 Registros independientes por fecha y días sin abrir la app
+OK 2 Editar programación y eliminar no altera registros anteriores
+OK 3 Archivo, restauración y cero hábitos
+OK 4 Validaciones y tareas sin materia ni vencimiento
+OK 5 Exámenes sin datos fijos; temas tienen identidad
+OK 6 Guardado, recarga, respaldo y detección de conflictos
+OK 7 Fallo de almacenamiento no sobreescribe el estado anterior
+OK 8 Corrupción bloquea escritura y permite recuperar copia validada
+OK 9 Importación inválida y objetos inseguros se rechazan
+9 grupos de pruebas completados.
+
+PRUEBA: timer-metrics
+OK rachas omiten días libres, hoy parcial, corte y corrección histórica
+OK umbrales y neutralidad de huellas
+OK temas estables, pausa, reanudación, finalización única, referencias eliminadas
+OK descanso no suma enfoque ni crea bloques automáticamente durante ausencia
+OK migración aditiva de esquema 1 y validación de timer
+OK filtro Todas incluye pendientes y Completadas sólo terminadas
+
+PRUEBA: migration
+PASS v44-state.json: IDs/datos originales conservados, historial recuperable, respaldo exacto e inmutable, fuentes por IDs y sin borrado
+PASS v452-state.json: IDs/datos originales conservados, historial recuperable, respaldo exacto e inmutable, fuentes por IDs y sin borrado
+
+PRUEBA: auth
+PASS OAuth mock: scopes parciales, popup cerrado, expiración, 401, red, allowlist, revocación y token privado
+
+PRUEBA: sync
+PASS Tasks bidireccional, IDs estables y campos locales conservados
+PASS fusión de campos diferentes
+PASS conflicto sin sobrescritura y resolución explícita
+PASS borrado local no borra Google ni resucita tras desvincular
+PASS borrado remoto conserva datos locales
+PASS POST con respuesta perdida se recupera por marcador sin duplicar
+PASS creación incierta ausente bloquea reenvío automático
+PASS PATCH con respuesta perdida converge sin perder cambios
+PASS red caída, desconexión y cuenta diferente sin pérdida local
+PASS importación compatible y repetida sin duplicados
+PASS Calendar horario/zona/duración, edición bilateral y campos remotos conservados
+PASS protección DST ambiguos
+PASS edición local durante solicitud se conserva como conflicto
+PASS HTTP 412 no sobreescribe
+PASS API paginación, completadas ocultas y codificación de IDs
+
+PRUEBA: domain-sync
+PASS fuentes separadas por ID, mismo título en dos dominios, materia por alias, evento personal excluido, día completo e idempotencia
+PASS hábitos en ambos sentidos sin mensajes UI ni nueva ocurrencia
+PASS historial de meses anteriores, límite de medianoche Argentina y días desconocidos sin incumplimiento inventado
+PASS editar, programar y archivar preserva historial
+PASS corrección histórica nunca completa/desmarca la siguiente ocurrencia
+PASS ocurrencias simultáneas, corrección manual protegida y resolución por ocurrencia
+PASS parcial bidireccional, varios días y temario preservado
+PASS instancia recurrente estable y correo jamás usado como materia
+PASS borrado explícito de un evento vinculado
+PASS cola offline durable, reconexión y filtros académicos
+
+PRUEBA: edge-cases
+PASS cambio a permiso de sólo lectura detectado; no escribe en Calendar
+PASS borrado remoto detenido ante edición simultánea; cancelar restaura copia local
+PASS eliminar una ocurrencia en Google no elimina el hábito ni su historial
+PASS alta anterior incierta recuperada sin duplicar
+PASS asignación de coincidencia revisada cancela alta local aún no enviada
+PASS paginación fallida rechaza lectura completa sin tratarla como lista vacía
+PASS frontera de año y medianoche en Argentina
+PASS separación estricta entre cuentas sin envíos ni pérdidas
+
+PRUEBA: regression
+OK inicio vacío y guardado inicial
+OK Facultad vacía sin e1
+OK crear hábito
+OK marcado y persistencia al recargar
+OK editar, archivar, restaurar, eliminar y deshacer hábito
+OK editor de registro
+OK tareas: alta opcional, editar, completar, eliminar/deshacer
+OK exámenes, temas y plan dinámico persistentes
+OK exportación JSON
+OK aislamiento de demo
+OK importación con confirmación
+OK 7 pantallas en 320,360,390,470px sin desborde horizontal ni IDs duplicados
+OK aviso de cambios entre pestañas
+OK sin errores JavaScript
+
+PRUEBA: browser
+OK doble toque silencioso en Inicio, Hábitos e historial; cambio de día y recarga
+OK descripción, Todos/Completadas, orden por fecha/materia y marcado silencioso en Facultad
+OK crear/editar parcial y agregar/editar/eliminar temas con confirmación e IDs estables
+OK crear tarea desde tema con identidad estable y sin duplicado
+OK enfoque 45/15, pausa/reanudación y recarga, sesión única, decisión explícita y reinicio
+OK completar tarea sólo por decisión explícita al terminar
+OK borrado de parcial conserva sesiones y elimina referencias activas e históricas
+OK ausencia larga sólo registra el bloque iniciado y permite sesión libre
+OK fallo de almacenamiento no inicia un timer sin guardar
+OK recursos cargados y cero excepciones JS
+
+PRUEBA: google-browser
+PASS UI simple sin Client ID/asociaciones, GIS simulado, fuentes e importación automática sin duplicados
+PASS edición silenciosa inicia sincronización automática
+PASS Calendar académico y configuración de materia desde UI
+PASS creación automática de examen con destino elegido e ID estable
+PASS conflicto visible y resolución expresa desde UI
+PASS desconexión y permisos denegados preservan datos; panel sin desbordes 320–470px
+PASS recarga sin tokens, caché sin APIs privadas y sin excepciones JS
+
+PRUEBA: pwa
+PASS apertura offline, navegación, imágenes, guardado y timer después de primera carga
+PASS actualización espera confirmación, bloquea con otra pestaña y preserva datos/timer
+PASS actualización incompleta rechazada; versión anterior sigue abriendo offline
+
+RESULTADO: 12/12 suites aprobadas.
